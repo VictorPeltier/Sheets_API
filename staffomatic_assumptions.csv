@@ -1,0 +1,103 @@
+transport_type,Location ID,Location Name,Name,ID,Department_zipcode,Key
+bike,16381,Vélo,92100 - Boulogne Billancourt,76365,92100,bike92100
+bike,16381,Vélo,Levallois,71154,92044,bike92044
+bike,16381,Vélo,Neuilly - 92200,72581,92200,bike92200
+bike,16381,Vélo,1 er arrondissement,66852,75001,bike75001
+bike,16381,Vélo,2ème arrondissement,66841,75002,bike75002
+bike,16381,Vélo,3ème arrondissement,66997,75003,bike75003
+bike,16381,Vélo,4ème arrondissement,66995,75004,bike75004
+bike,16381,Vélo,5ème arrondissement,69411,75005,bike75005
+bike,16381,Vélo,6ème arrondissement,68934,75006,bike75006
+bike,16381,Vélo,7ème arrondissement,66996,75007,bike75007
+bike,16381,Vélo,8ème arrondissement,66998,75008,bike75008
+bike,16381,Vélo,9ème arrondissement,66842,75009,bike75009
+bike,16381,Vélo,10ème arrondissement,71820,75010,bike75010
+bike,16381,Vélo,11ème arrondissement,66853,75011,bike75011
+bike,16381,Vélo,12ème arrondissement,80392,75012,bike75012
+bike,16381,Vélo,13ème arrondissement,76011,75013,bike75013
+bike,16381,Vélo,14ème arrondissement,72582,75014,bike75014
+bike,16381,Vélo,15ème arrondissement,71819,75015,bike75015
+bike,16381,Vélo,16ème arrondissement,66994,75016,bike75016
+bike,16381,Vélo,17ème arrondissement,66993,75017,bike75017
+bike,16381,Vélo,18ème arrondissement,76364,75018,bike75018
+bike,16381,Vélo,19ème arrondissement,76012,75019,bike75019
+bike,16381,Vélo,20ème arrondissement,81669,75020,bike75020
+car,16382,Voiture,92100 - Boulogne Billancourt,76367,92100,car92100
+car,16382,Voiture,92400 - Levallois Perret,76760,92044,car92044
+car,16382,Voiture,92200 - Neuilly sur Seine,80284,92200,car92200
+car,16382,Voiture,1er arrondissement,67098,75001,car75001
+car,16382,Voiture,2ème arrondissement,67099,75002,car75002
+car,16382,Voiture,3ème arrondissement,67100,75003,car75003
+car,16382,Voiture,4ème arrondissement,67101,75004,car75004
+car,16382,Voiture,5ème arrondissement,74907,75005,car75005
+car,16382,Voiture,6ème arrondissement,74908,75006,car75006
+car,16382,Voiture,7ème arrondissement,67102,75007,car75007
+car,16382,Voiture,8ème arrondissement,67103,75008,car75008
+car,16382,Voiture,9ème arrondissement,67104,75009,car75009
+car,16382,Voiture,10ème arrondissement,74909,75010,car75010
+car,16382,Voiture,11ème arrondissement,67105,75011,car75011
+car,16382,Voiture,12ème arrondissement,72574,75012,car75012
+car,16382,Voiture,13ème arrondissement,72577,75013,car75013
+car,16382,Voiture,14ème arrondissement,72576,75014,car75014
+car,16382,Voiture,15ème arrondissement,70790,75015,car75015
+car,16382,Voiture,16ème arrondissement,66850,75016,car75016
+car,16382,Voiture,17ème arrondissement,66851,75017,car75017
+car,16382,Voiture,18ème arrondissement,80399,75018,car75018
+car,16382,Voiture,19ème arrondissement,72575,75019,car75019
+car,16382,Voiture,20ème arrondissement,82655,75020,car75020
+cargobikexl,16384,Cargo bike,Monoprix rue de la source - depuis Ponthieux,85116,75016,cargobikexl75016
+cargobikexl,16384,Cargo bike,Monoprix rue du bac - depuis Denfert,85117,75007,cargobikexl75007
+cargobikexl,16384,Cargo bike,Monoprix rue de la source - depuis Denfert,85118,75016,cargobikexl75016
+cargobikexl,16384,Cargo bike,Monoprix rue du bac - depuis Bastille,85119,75007,cargobikexl75007
+cargobikexl,16384,Cargo bike,1er arrondissement,67106,75001,cargobikexl75001
+cargobikexl,16384,Cargo bike,2ème arrondissement,67107,75002,cargobikexl75002
+cargobikexl,16384,Cargo bike,3ème arrondissement,67108,75003,cargobikexl75003
+cargobikexl,16384,Cargo bike,4ème arrondissement,67109,75004,cargobikexl75004
+cargobikexl,16384,Cargo bike,5ème arrondissement,77657,75005,cargobikexl75005
+cargobikexl,16384,Cargo bike,6ème arondissement,77658,75006,cargobikexl75006
+cargobikexl,16384,Cargo bike,7ème arrondissement,67110,75007,cargobikexl75007
+cargobikexl,16384,Cargo bike,8ème arondissement,67111,75008,cargobikexl75008
+cargobikexl,16384,Cargo bike,9ème arrondissement,67112,75009,cargobikexl75009
+cargobikexl,16384,Cargo bike,10ème arrondissement,77659,75010,cargobikexl75010
+cargobikexl,16384,Cargo bike,11ème arrondissement,67113,75011,cargobikexl75011
+cargobikexl,16384,Cargo bike,12ème arrondissement,77660,75012,cargobikexl75012
+cargobikexl,16384,Cargo bike,13ème arrondissement,77661,75013,cargobikexl75013
+cargobikexl,16384,Cargo bike,14ème arrondissement,77662,75014,cargobikexl75014
+cargobikexl,16384,Cargo bike,15ème arrondissement,77663,75015,cargobikexl75015
+cargobikexl,16384,Cargo bike,16ème arrondissement,67114,75016,cargobikexl75016
+cargobikexl,16384,Cargo bike,17ème arrondissement,67115,75017,cargobikexl75017
+cargobikexl,16384,Cargo bike,18ème arrondissement,77664,75018,cargobikexl75018
+cargobikexl,16384,Cargo bike,19ème arrondissement,77665,75019,cargobikexl75019
+cargobikexl,16384,Cargo bike,20ème arrondissement,77666,75020,cargobikexl75020
+bike,18311,Stuart IT team,Shift IT,72930,,bike
+bike,20171,Stuart Support Team,Support Shifts,78918,,bike
+bike,20171,Stuart Support Team,London support,80743,,bike
+cargobike,20656,Cargo bike bullit,1er arrondissement,83135,75001,cargobike75001
+cargobike,20656,Cargo bike bullit,2ème arrondissement,80426,75002,cargobike75002
+cargobike,20656,Cargo bike bullit,3ème arrondissement,86809,75003,cargobike75003
+cargobike,20656,Cargo bike bullit,4ème arrondissement,80427,75004,cargobike75004
+cargobike,20656,Cargo bike bullit,5ème arrondissement,80428,75005,cargobike75005
+cargobike,20656,Cargo bike bullit,6ème arrondissement,80429,75006,cargobike75006
+cargobike,20656,Cargo bike bullit,7ème arrondissement,83695,75007,cargobike75007
+cargobike,20656,Cargo bike bullit,8ème arrondissement,80431,75008,cargobike75008
+cargobike,20656,Cargo bike bullit,9ème arrondissement,80432,75009,cargobike75009
+cargobike,20656,Cargo bike bullit,10ème arrondissement,80433,75010,cargobike75010
+cargobike,20656,Cargo bike bullit,11ème arrondissement,80434,75011,cargobike75011
+cargobike,20656,Cargo bike bullit,12ème arrondissement,80435,75012,cargobike75012
+cargobike,20656,Cargo bike bullit,13ème arrondissement,80436,75013,cargobike75013
+cargobike,20656,Cargo bike bullit,14ème arrondissement,80437,75014,cargobike75014
+cargobike,20656,Cargo bike bullit,15ème arrondissement,80438,75015,cargobike75015
+cargobike,20656,Cargo bike bullit,16ème arrondissement,80439,75016,cargobike75016
+cargobike,20656,Cargo bike bullit,17ème arrondissement,80440,75017,cargobike75017
+cargobike,20656,Cargo bike bullit,18ème arrondissement,80441,75018,cargobike75018
+cargobike,20656,Cargo bike bullit,20ème arrondissement,81668,75020,cargobike75020
+cargobike,20656,Cargo bike bullit,92400 - Levallois,80446,92044,cargobike92044
+cargobike,20656,Cargo bike bullit,92100 - Boulogne-Billancourt,86810,92100,cargobike92100
+cargobike,20656,Cargo bike bullit,92200 - Neuilly,86811,92200,cargobike92200
+bike,22282,Opération ampoules,Départ du 40 rue du professeur Gosset à Saint-Ouen,85039,Gosset,bikeGosset
+bike,22282,Opération ampoules,"Départ de l'hôpital saint-vincent de Paul au 82 Avenue Denfert-Rochereau, 75014 Paris",85212,Saint Vincent de Paul,bikeSaint Vincent de Paul
+car,16382,Voiture,PC - Paris Centre,86830,PC,carPC
+car,16382,Voiture,PNO - Paris Nord Ouest,86831,PNO,carPNO
+car,16382,Voiture,PS - Paris Seine,86832,PS,carPS
+car,16382,Voiture,PSO - Paris Sud-Ouest,86833,PSO,carPSO
+car,16382,Voiture,PE - Paris Est,86834,PE,carPE
