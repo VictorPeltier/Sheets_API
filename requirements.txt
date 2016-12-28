@@ -1,0 +1,14 @@
+curl==2016.2.1
+google-api-python-client==1.5.5
+httplib2==0.9.2
+numpy==1.11.3
+oauth2client==4.0.0
+pandas==0.19.2
+pyasn1==0.1.9
+pyasn1-modules==0.0.8
+pycurl==7.43.0
+python-dateutil==2.6.0
+pytz==2016.10
+rsa==3.4.2
+six==1.10.0
+uritemplate==3.0.0

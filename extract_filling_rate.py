@@ -1,10 +1,7 @@
-from staffomatic_api import *
+import staffomatic_api
 import csv
 import pandas as pd
 from datetime import datetime, timedelta
-import os
-from shutil import copy
-from sys import exit
 
 
 def extract_shifts():
@@ -24,20 +21,36 @@ def extract_shifts():
 	#Opens a csv file in which the information will be copied and enters the header
 	csv_shift = open('shifts_list.csv','wb')
 	writer_shift = csv.writer(csv_shift)
-	writer_shift.writerow(['transport_type','zipcode','starts_at','ends_at','shift_length','week','weekday','date','time_start','desired_coverage','nb_subscribers','filling_rate','hours_published','hours_subscribed'])
+	writer_shift.writerow([
+		'transport_type',
+		'zipcode',
+		'starts_at',
+		'ends_at',
+		'shift_length',
+		'week',
+		'weekday',
+		'date',
+		'time_start',
+		'desired_coverage',
+		'nb_subscribers',
+		'filling_rate',
+		'hours_published',
+		'hours_subscribed',
+		'shift_name'
+	])
 
 
 	#Reads the csv file with the staffomatic assumptions
 	assumptions = pd.read_csv('staffomatic_assumptions.csv')
 
 	#Gets all the shifts from the various locations for the appointed period
-	bikes, http_status = getShiftsLocationspecific('16381',date_start,date_end)
+	bikes, http_status = staffomatic_api.getShiftsLocationspecific('16381',date_start,date_end)
 	print('Bikes shifts extracted')
-	cars, http_status = getShiftsLocationspecific('16382',date_start,date_end)
+	cars, http_status = staffomatic_api.getShiftsLocationspecific('16382',date_start,date_end)
 	print('Cars shifts extracted')
-	cargoXL, http_status = getShiftsLocationspecific('16384',date_start,date_end)
+	cargoXL, http_status = staffomatic_api.getShiftsLocationspecific('16384',date_start,date_end)
 	print('CargoXL shifts extracted')
-	bullitt, http_status = getShiftsLocationspecific('20656',date_start,date_end)
+	bullitt, http_status = staffomatic_api.getShiftsLocationspecific('20656',date_start,date_end)
 	print('Bullitt shifts extracted')
 
 
@@ -70,7 +83,14 @@ def extract_shifts():
 		hours_published = desired_coverage * shift_length
 		hours_subscribed = nb_subscribers * shift_length
 		weekday = start.weekday()
-
+		if time_start < '10:00:00':
+			shift_name = '0. morning'
+		elif time_start < '13:00:00':
+			shift_name = '1. noon'
+		elif time_start < '18:00:00':
+			shift_name = '2. afternoon'
+		else:
+			shift_name = '3. evening'
 
 		#Computes the filling rate, leaves a blank if no desired coverage was applied
 		try:
@@ -94,7 +114,8 @@ def extract_shifts():
 			nb_subscribers,
 			filling_rate,
 			hours_published,
-			hours_subscribed
+			hours_subscribed,
+			shift_name
 			])
 	csv_shift.close()
 

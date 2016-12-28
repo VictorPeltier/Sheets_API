@@ -12,7 +12,7 @@ import numpy as np
 def authenticate():
     """ Authenticate through OAuth v2 to Sheets API v4 and
     returns the API endpoint to use under the name SHEETS"""
-    #Creates the flags
+    #Create the flags
     try:
         import argparse
         flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
@@ -21,12 +21,12 @@ def authenticate():
 
     path_start = os.getcwd()
 
-    #Sets the parameters of Google Authentication
+    #Set the parameters of Google Authentication
     SCOPES = 'https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive'
     CLIENT_SECRET = '%s/auth/client_secret.json' % path_start
     APPLICATION_NAME = 'client_filling'
 
-    #Stores the credentials
+    #Store the credentials
     store = file.Storage('%s/auth/storage.json' %path_start)
     credz = store.get()
     if not credz or credz.invalid:
@@ -34,7 +34,7 @@ def authenticate():
         credz = tools.run_flow(flow,store,flags)
 
 
-    #Initializes the API endpoint to communicate with Google API
+    #Initialize the API endpoint to communicate with Google API
     SHEETS = build('sheets','v4',http=credz.authorize(Http()))
     DRIVE = build('drive','v3',http=credz.authorize(Http()))
     return SHEETS, DRIVE
