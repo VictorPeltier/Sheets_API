@@ -1,7 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-'''This scripts aims at exracting data on shifts from Staffomatic, search
+'''
+
+This scripts aims at exracting data on shifts from Staffomatic, search
 the target Google spreadsheet in which to compute the results and loads the
 data in the 'Raw data' sheet.
 
@@ -15,7 +17,7 @@ The different steps to upload the results are the following:
     Step 2: extract the shifts - this section is the one that takes the most
     time given low reaction from Staffomatic API
     Step 3: research the Gsheet called 'Paris_filling_rate' and extracts the iD
-    Step 4: push the data from Staffomatic into the GSheet in the worksheet 'Raw data'
+    Step 4: clear the existing data in the GSheet in the worksheet 'Raw data' and push the data from Staffomatic
     Step 5: format the filling rate as a percentage
     #Step 1
 '''
@@ -41,16 +43,18 @@ print('La feuille ayant pour nom "Paris_filling_rate" a l ID {0}'.format(spreads
 
 #Step 4
 raw_data_sheet_name = 'Raw data'
+noms, tableau = sheets_API.extract_sheets_list(spreadsheet_id)
+raw_data_sheet_id = int(tableau.loc[tableau.loc[:,'TITLE']==raw_data_sheet_name,'ID'])
+sheets_API.clear_sheet(raw_data_sheet_id, spreadsheet_id)
+print('Data in Raw Data sheet has been cleared')
 upload = sheets_API.write_data(shifts_data,spreadsheet_id,raw_data_sheet_name)
-print('Les données ont été uploadées dans Raw Data')
+print('Data has been uploaded into Raw Data')
 
 
 #Step 5
-noms, tableau = sheets_API.extract_sheets_list(spreadsheet_id)
-raw_data_sheet_id = int(tableau.loc[tableau.loc[:,'TITLE']==raw_data_sheet_name,'ID'])
 
 formatting = 'PERCENT'
 pattern = '0%'
 
 sheets_API.change_format(11,12,raw_data_sheet_id, spreadsheet_id, formatting, pattern)
-print('Les données ont été formattées')
+print('Data has been formatted')

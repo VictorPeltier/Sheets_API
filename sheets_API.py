@@ -54,6 +54,28 @@ def push(request_data,spreadsheet_id):
     ).execute()
 
 
+def clear_sheet(sheet_id, spreadsheet_id):
+    '''Clear the specified sheet of the spreadsheet with spreadsheet_id of all values'''
+    requests_to_pass = []
+
+    requests_to_pass.append({
+        "updateCells":{
+            "range": {
+                "sheetId": sheet_id
+            },
+            "fields":"userEnteredValue"
+        }
+    })
+
+    body = {
+        "requests":requests_to_pass
+    }
+
+    batch_update(body, spreadsheet_id)
+
+
+
+
 def write_data(request_data,spreadsheet_id,sheet_name):
 
     ''' Takes all the data entered as request_data and push the values to the spreadsheet with spreadsheet_id
@@ -84,6 +106,8 @@ def batch_update(body,spreadsheet_id):
         body = body,
     ).execute()
     print(response.get('replies')[0].get('findReplace'))
+
+
 
 def change_format(start_column, end_column, sheet_id, spreadsheet_id, type_format, pattern_format):
     '''Change the format of the specified columns of the spreadsheet with spreadsheet_id to format specified'''

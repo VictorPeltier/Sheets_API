@@ -6,8 +6,12 @@ from urllib import urlencode
 with open('auth/credentials.txt','rb') as file:
 	credentials = file.read()
 
+with open('auth/domain_name.txt','rb') as file:
+    domain_name = file.read()
+
 def getFromServer(url):
 	"""
+
 	Make a GET request to the staffomatic API.
 	Returns the server response and the HTTP status.
 	"""
@@ -30,6 +34,7 @@ def getFromServer(url):
 
 def postToServer(url, data):
 	"""
+
 	Make a POST request to the staffomatic API.
 	Returns the server response and the HTTP status.
 	"""
@@ -57,11 +62,12 @@ def postToServer(url, data):
 
 def getLocations():
 	"""
+
 	Retrieve all the locations using the staffomatic API.
 	Returns the locations and the HTTP status.
 	"""
 
-	url = 'https://api.staffomaticapp.com/v3/stuart/locations.json'
+	url = 'https://api.staffomaticapp.com/v3/{domain}/locations.json'.format(domain = domain_name)
 	locations, http_status = getFromServer(url)
 	return locations, http_status
 
@@ -72,7 +78,7 @@ def getDepartments(location_id):
 	Returns the server response and the HTTP status.
 	"""
 
-	url = 'https://api.staffomaticapp.com/v3/stuart/locations/%d/departments.json' % location_id
+	url = 'https://api.staffomaticapp.com/v3/{domain}/locations/{location}/departments.json'.format(domain = domain_name, location = location_id)
 	departments, http_status = getFromServer(url)
 	return departments, http_status
 
@@ -83,7 +89,7 @@ def getSchedules(location_id):
 	Returns the server response and the HTTP status.
 	"""
 
-	url = 'https://api.staffomaticapp.com/v3/stuart/locations/%d/schedules.json' % location_id
+	url = 'https://api.staffomaticapp.com/v3/{domain}/locations/{location}/schedules.json'.format(domain = domain_name, location = location_id)
 	schedules, http_status = getFromServer(url)
 	return schedules, http_status
 
@@ -105,7 +111,7 @@ def createShift(location_id, department_id, schedule_id, from_timestamp, to_time
 	}
 
 	# Create the shift
-	url = 'https://api.staffomaticapp.com/v3/stuart//schedules/%s/shifts.json' % schedule_id
+	url = 'https://api.staffomaticapp.com/v3/{domain}//schedules/{schedule}/shifts.json'.format(domain = domain_name, schedule = schedule_id)
 	shift, http_status = postToServer(url, shift_data)
 	return shift, http_status
 
@@ -115,7 +121,7 @@ def getUsers(location_id):
 	Returns the locations and the HTTP status.
 	"""
 
-	url = 'https://api.staffomaticapp.com/v3/stuart/locations/%s/users.json' % location_id
+	url = 'https://api.staffomaticapp.com/v3/{domain}/locations/{location}/users.json'.format(domain = domain_name, location = location_id)
 	users, http_status = getFromServer(url)
 	return users, http_status
 
@@ -160,7 +166,7 @@ def changeId(location_id,user_id,custom_id):
 		}
 
 
-	url = 'https://api.staffomaticapp.com/v3/stuart/locations/%s/users/%s.json' % (location_id,user_id)
+	url = 'https://api.staffomaticapp.com/v3/{domain}/locations/{location}/users/{user}.json'.format(domain = domain_name, location = location_id, user = user_id)
 	user, http_status = putToServer(url,user_data)
 	return user, http_status
 
@@ -171,7 +177,7 @@ def getShifts(start,end):
 	Returns the shift and the HTTP status.
 	"""
 
-	url = 'https://api.staffomaticapp.com/v3/stuart/shifts.json?from=%sT00:00:00+02:00&until=%sT00:00:00+02:00' % (start,end)
+	url = 'https://api.staffomaticapp.com/v3/{domain}/shifts.json?from={start_t}T00:00:00+02:00&until={end_t}T00:00:00+02:00'.format(domain = domain_name, start_t = start, end_t = end)
 	shifts, http_status = getFromServer(url)
 	return shifts, http_status
 
@@ -182,7 +188,7 @@ def getShiftsLocationspecific(location,start,end):
 	Returns the shift and the HTTP status.
 	"""
 
-	url = 'https://api.staffomaticapp.com/v3/stuart/locations/%s/shifts.json?from=%sT00:00:00+02:00&until=%sT00:00:00+02:00' % (location,start,end)
+	url = 'https://api.staffomaticapp.com/v3/{domain}/locations/{location}/shifts.json?from={start_t}T00:00:00+02:00&until={end_t}T00:00:00+02:00'.format(domain = domain_name, location = location, start_t = start, end_t = end)
 	shifts, http_status = getFromServer(url)
 	return shifts, http_status
 
@@ -201,6 +207,6 @@ def inviteUser(email, location_id, custom_id):
 		'custom_id' : 'id %s' % custom_id
 		}
 	# Create the user
-	url = 'https://api.staffomaticapp.com/v3/stuart//locations/%s/users.json' % location_id
+	url = 'https://api.staffomaticapp.com/v3/{domain}//locations/{location}/users.json'.format(domain = domain_name, location = location_id)
 	user, http_status = postToServer(url, user_data)
 	return user, http_status
